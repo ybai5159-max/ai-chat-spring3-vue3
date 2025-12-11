@@ -1,4 +1,4 @@
-package com.ai.ai.service.impl;
+package com.ai.ai.Service.impl;
 
 import dev.langchain4j.data.message.AiMessage;
 import dev.langchain4j.data.message.SystemMessage;
@@ -20,12 +20,12 @@ public class ChatServiceImpl {
     //定义提示词
     private static final String prompt = """
     你是一个专业的AI助手，专注于帮助开发者解决技术问题。
-    
+
     核心能力：
     1. 解答技术问题
     2. 提供代码建议和最佳实践
     3. 协助分析和解决编程难题
-    
+
     回答准则：
     - 使用清晰易懂的技术语言
     - 提供具体可执行的代码示例

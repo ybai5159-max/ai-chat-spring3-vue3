@@ -1,4 +1,4 @@
-import com.ai.ai.service.impl.ChatServiceImpl;
+import com.ai.ai.Service.ChatService;
 import com.ai.aiEasyApplication;
 import dev.langchain4j.data.message.TextContent;
 import dev.langchain4j.data.message.UserMessage;
@@ -10,14 +10,11 @@ import org.springframework.boot.test.context.SpringBootTest;
 public class ChatTest {
 
     @Autowired
-    ChatServiceImpl chatService;
+    private ChatService chatService;
 
     @Test
     void chat(){
-        UserMessage userMessage = UserMessage.from(
-                TextContent.from("你能帮助我解决哪些编程问题？")
-        );
-        String chat = chatService.chat(userMessage);
-        System.out.println(chat);
+        String msg = chatService.chat("如何在Java中创建一个线程安全的单例模式？");
+        System.out.println(msg);
     }
 }
