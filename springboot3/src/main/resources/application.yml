@@ -110,7 +110,14 @@ langchain4j:
     dashscope:
       # 聊天模型配置
       chat-model:
-        # 指定使用的模型名称
+        # 指定使用的模型名称: qwen-max（通义千问最强版本）
         model-name: qwen-max
-        # API密钥
+        # API密钥,用于身份验证和计费
+        api-key: sk-868bb7756419427b8343f4d6d9d16ff1
+        # 嵌入模型配置
+        # 用于将文本转换为向量表示，适用于语义搜索、文本相似度计算等场景
+      embedding-model:
+        # 该模型专门用于生成高质量的文本向量嵌入
+        model-name: text-embedding-v4
+        # 与聊天模型使用相同的API密钥
         api-key: sk-868bb7756419427b8343f4d6d9d16ff1

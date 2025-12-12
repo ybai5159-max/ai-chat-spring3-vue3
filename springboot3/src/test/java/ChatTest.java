@@ -26,4 +26,12 @@ public class ChatTest {
         Report report = chatService.getReport("我是一个学习编程的学生，我叫小明，不知道该选择哪个学习路径？");
         System.out.println(report);
     }
+
+    @Test
+    void toRag(){
+        String chat = chatService.chat("为什么选择Java做AI应用开发？");
+        System.out.println(chat);
+    }
+
+
 }

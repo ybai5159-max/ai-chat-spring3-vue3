@@ -2,6 +2,7 @@ package com.ai.ai;
 import com.ai.ai.Service.ChatService;
 import dev.langchain4j.memory.chat.MessageWindowChatMemory;
 import dev.langchain4j.model.chat.ChatModel;
+import dev.langchain4j.rag.content.retriever.ContentRetriever;
 import dev.langchain4j.service.AiServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -19,6 +20,12 @@ public class ChatServiceFactory {
     private ChatModel chatModel;
 
     /**
+     * 内容检索器
+     */
+    @Autowired
+    private ContentRetriever contentRetriever;
+
+    /**
      * 创建对话服务Bean的方法
      * @return 配置好的对话服务实例, 可以直接用来进行AI对话
      */
@@ -32,6 +39,7 @@ public class ChatServiceFactory {
         ChatService codeService =AiServices.builder(ChatService.class)
                 .chatModel(chatModel) // 设置AI聊天模型
                 .chatMemory(chatMemory) // 设置聊天记忆，维持对话上下文
+                .contentRetriever(contentRetriever) // 设置内容检索器，启用RAG功能，并且从知识库检索相关的信息增强AI回答
                 .build(); // 构建完整的对话服务实例
 
         // 返回对话服务实例
