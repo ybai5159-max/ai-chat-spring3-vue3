@@ -1,5 +1,6 @@
 package com.ai.ai.Service;
 
+import com.ai.ai.domain.Report;
 import dev.langchain4j.service.SystemMessage;
 
 /**
@@ -18,5 +19,13 @@ public interface ChatService {
      */
     @SystemMessage(fromResource = "prompt.txt")
     String chat(String message);
+
+    /**
+     * 获取报告
+     * @param message 用户输入的消息内容
+     * @return 格式化之后的报告内容
+     */
+    @SystemMessage(fromResource = "prompt.txt")
+    Report getReport(String message);
 
 }
