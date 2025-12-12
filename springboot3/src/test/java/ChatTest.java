@@ -14,7 +14,9 @@ public class ChatTest {
 
     @Test
     void chat(){
-        String msg = chatService.chat("如何在Java中创建一个线程安全的单例模式？");
+        String msg = chatService.chat("我想在java和python之间选择java？");
         System.out.println(msg);
+        String newmsg = chatService.chat("我之前在java和python中选择了哪个？");
+        System.out.println(newmsg);
     }
 }
