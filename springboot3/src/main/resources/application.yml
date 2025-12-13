@@ -121,3 +121,9 @@ langchain4j:
         model-name: text-embedding-v4
         # 与聊天模型使用相同的API密钥
         api-key: sk-868bb7756419427b8343f4d6d9d16ff1
+      # 支持实时流式响应，适用于需要逐步显示生成结果的场景
+      streaming-chat-model:
+        # 指定使用的模型名称
+        model-name: qwen-max
+        # 与聊天模型使用相同的API密钥
+        api-key: sk-868bb7756419427b8343f4d6d9d16ff1

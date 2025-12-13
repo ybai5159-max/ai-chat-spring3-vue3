@@ -1,7 +1,11 @@
 package com.ai.ai.Service;
 
 import com.ai.ai.domain.Report;
+import dev.langchain4j.service.MemoryId;
+import dev.langchain4j.service.Result;
 import dev.langchain4j.service.SystemMessage;
+import dev.langchain4j.service.UserMessage;
+import reactor.core.publisher.Flux;
 
 /**
  * 对话服务接口
@@ -27,5 +31,25 @@ public interface ChatService {
      */
     @SystemMessage(fromResource = "prompt.txt")
     Report getReport(String message);
+
+
+    /**
+     * 使用RAG与AI进行对话
+     * @param message 用户输入的消息内容
+     * @return 包含RAG处理结果的封装对象
+     *         - Ai生成的回答内容
+     *         - 相关的检索来源信息
+     */
+    @SystemMessage(fromResource = "prompt.txt")
+    Result<String> getChatRag(String message);
+
+    /**
+     * 基于sse的流逝对话接口
+     * @param memoryId 对话记忆ID，用于标识和维持对话的上下问记忆
+     * @param message 用户输入的消息内容
+     * @return 返回一个Flux，包含Ai实时回复的片段
+     */
+    @SystemMessage(fromResource = "prompt.txt")
+    Flux<String> sseChat(@MemoryId int memoryId,@UserMessage String message);
 
 }

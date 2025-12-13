@@ -3,6 +3,7 @@ import com.ai.ai.domain.Report;
 import com.ai.aiEasyApplication;
 import dev.langchain4j.data.message.TextContent;
 import dev.langchain4j.data.message.UserMessage;
+import dev.langchain4j.service.Result;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -31,6 +32,13 @@ public class ChatTest {
     void toRag(){
         String chat = chatService.chat("为什么选择Java做AI应用开发？");
         System.out.println(chat);
+    }
+
+    @Test
+    void getChatRag(){
+        Result<String> res = chatService.getChatRag("为什么选择Java做AI应用开发？");
+        System.out.println("RAG检索到的文档" + res.sources());
+        System.out.println("AI的回答" + res.content());
     }
 
 
