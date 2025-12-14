@@ -5,7 +5,7 @@
             <div class="header">
                 <div class="header-left">
                     <img src="@/assets/logo/logo.png" alt="">
-                    <div class="titles" @click="router.push('/index/home')">用户前台</div>
+                    <div class="titles" @click="router.push('/index/home')">知识库与大语言模型的智能对话系统</div>
                 </div>
                 <div class="header-center">
                     <div class="front-header-nav">

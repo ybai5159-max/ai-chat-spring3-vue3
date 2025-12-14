@@ -1,7 +1,7 @@
 {
   "name": "huacai",
   "version": "1.0.0",
-  "description": "用户前台",
+  "description": "知识库与大语言模型的智能对话系统",
   "author": "IRQA",
   "license": "MIT",
   "type": "module",
