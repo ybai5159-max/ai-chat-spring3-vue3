@@ -2,7 +2,7 @@
   <div class="dashboard">
     <div class="welcome-section">
       <div class="welcome-content">
-        <h1 class="welcome-title">欢迎使用AI智能问答系统</h1>
+        <h1 class="welcome-title">欢迎使用知识库与大语言模型的智能对话系统</h1>
       </div>
     </div>
   </div>

@@ -12,7 +12,7 @@
     <artifactId>ai</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>ai-easy</name>
-    <description>AI智能问答系统</description>
+    <description>知识库与大语言模型的智能对话系统</description>
 
     <properties>
         <ai.version>1.0.0</ai.version>
